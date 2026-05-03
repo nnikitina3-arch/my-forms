@@ -21,25 +21,22 @@
       }, '');
     }
 
-    // Главный массив с вашими ссылками
+    // Главный массив с вашими ссылками (сейчас 3 формы)
     const forms = [
       "https://docs.google.com/forms/d/e/1FAIpQLSc4NuwXsa92dtDXniORObZhvd0PapZH5mbllIWxdg-WkgjG4Q/viewform?usp=dialog",
-      "https://docs.google.com/forms/d/e/1FAIpQLSduCSzDXKNRAg4yqBEisPesHHkj6NCPGeoHhRllAu60T_U-Qg/viewform?usp=header",
+      "https://docs.google.com/forms/d/e/1FAIpQLSeudnFIJ3sRC8fSLX2CiSPji2mBX6KGsBTCEV8IARYsicdH5A/viewform?usp=header",
       "https://docs.google.com/forms/d/e/1FAIpQLSdmw984eCRjBOsJidYagyEPkJvzltSqyX8nrGmHN4claApTEw/viewform?usp=header"
     ];
 
     const COOKIE_NAME = 'selectedFormIndex';
 
-    // Проверяем, закреплена ли уже форма за этим пользователем
     let selectedIndex = getCookie(COOKIE_NAME);
 
-    // Если cookie нет — выбираем случайную форму и запоминаем её
     if (selectedIndex === '') {
       selectedIndex = Math.floor(Math.random() * forms.length);
-      setCookie(COOKIE_NAME, selectedIndex, 365); // Будет храниться 1 год
+      setCookie(COOKIE_NAME, selectedIndex, 365);
     }
 
-    // Перенаправляем на выбранную форму
     window.location.replace(forms[selectedIndex]);
   </script>
 </body>
