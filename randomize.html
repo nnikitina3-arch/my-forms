@@ -21,11 +21,12 @@
       }, '');
     }
 
-    // Главный массив с вашими ссылками (сейчас 3 формы)
+    // Главный массив с вашими 4-мя ссылками
     const forms = [
       "https://docs.google.com/forms/d/e/1FAIpQLSc4NuwXsa92dtDXniORObZhvd0PapZH5mbllIWxdg-WkgjG4Q/viewform?usp=dialog",
-      "https://docs.google.com/forms/d/e/1FAIpQLSeudnFIJ3sRC8fSLX2CiSPji2mBX6KGsBTCEV8IARYsicdH5A/viewform?usp=header",
-      "https://docs.google.com/forms/d/e/1FAIpQLSdmw984eCRjBOsJidYagyEPkJvzltSqyX8nrGmHN4claApTEw/viewform?usp=header"
+      "https://docs.google.com/forms/d/e/1FAIpQLSduCSzDXKNRAg4yqBEisPesHHkj6NCPGeoHhRllAu60T_U-Qg/viewform?usp=dialog",
+      "https://docs.google.com/forms/d/e/1FAIpQLSeudnFIJ3sRC8fSLX2CiSPji2mBX6KGsBTCEV8IARYsicdH5A/viewform?usp=dialog",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdmw984eCRjBOsJidYagyEPkJvzltSqyX8nrGmHN4claApTEw/viewform?usp=dialog"
     ];
 
     const COOKIE_NAME = 'selectedFormIndex';
@@ -34,9 +35,10 @@
 
     if (selectedIndex === '') {
       selectedIndex = Math.floor(Math.random() * forms.length);
-      setCookie(COOKIE_NAME, selectedIndex, 365);
+      setCookie(COOKIE_NAME, selectedIndex, 365); // запоминаем на год
     }
 
+    // Перенаправляем на выбранную форму
     window.location.replace(forms[selectedIndex]);
   </script>
 </body>
